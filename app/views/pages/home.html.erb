@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);">
+  <div class="container">
+    <h1>This Hotel has so many good rooms</strong>!</h1>
+    <p>Keep calm and sleep here</p>
+    <%= link_to "Discover our offers", rooms_path, class: "btn btn-success" %>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="d-flex justify-content-center m-5">
+    <h1>Our best offers</h1>
+  </div>
+  <div class="wrapper-home mt-5 mb-5">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= Room.first.photo %>)">
+      The cool room
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      The cozy room
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= Room.last.photo %>)">
+      The Best Room
+    </div>
+  </div>
+</div>

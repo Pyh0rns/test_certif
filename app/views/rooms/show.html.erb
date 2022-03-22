@@ -1,0 +1,39 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @room.photo %>);">
+  <div class="container">
+    <h1>Great Hotel!</h1>
+    <p>Boom Boom Boom Boom, I want you in my room.</p>
+  </div>
+</div>
+
+
+<div class="container">
+
+
+<div class="card-product mt-5">
+  <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Price = <%= @room.price %></p>
+  </div>
+</div>
+
+
+
+<label for="start">Start date:</label>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+
+
+
+<label for="end">End date:</label>
+
+<input type="date" id="end" name="trip-end"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+
+
+
+
+</div>

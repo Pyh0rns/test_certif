@@ -1,0 +1,21 @@
+<div class="container d-flex justify-content-center m-5">
+  <h1>Rooms#index</h1>
+</div>
+
+<div class="container">
+  <div class="wrapper">
+    <% @rooms.each do |room| %>
+      <div class="card-trip">
+        <img src= <%= room.photo %> />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Room number = <%= room.number %></h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">£ <%= room.price %> </h2>
+          <%= link_to "visit", room_path(room.id), class:"btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
