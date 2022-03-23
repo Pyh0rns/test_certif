@@ -8,32 +8,35 @@
 
 <div class="container">
 
-
-<div class="card-product mt-5">
-  <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Price = <%= @room.price %></p>
+  <div class="card-product mt-5">
+    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9vbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+    <div class="card-product-infos">
+      <h2>Product name</h2>
+      <p>Price = <%= @room.price %></p>
+    </div>
   </div>
-</div>
 
 
+<%# ---------------- test input date ----------------------- %>
+  <label for="start">Start date:</label>
+  <input type="date" id="start" name="trip-start"
+        value="2018-07-22"
+        min="2018-01-01" max="2018-12-31">
 
-<label for="start">Start date:</label>
-
-<input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2018-01-01" max="2018-12-31">
-
-
-
-<label for="end">End date:</label>
-
-<input type="date" id="end" name="trip-end"
-       value="2018-07-22"
-       min="2018-01-01" max="2018-12-31">
+  <label for="end">End date:</label>
+  <input type="date" id="end" name="trip-end"
+        value="2018-07-22"
+        min="2018-01-01" max="2018-12-31">
 
 
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2>When ?!</h2>
 
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Go", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 </div>
