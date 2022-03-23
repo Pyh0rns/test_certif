@@ -28,15 +28,30 @@
         value="2018-07-22"
         min="2018-01-01" max="2018-12-31">
 
+</div>
 
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+
+
+<div class="container d-flex justify-content-around">
+
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;" data-controller="flatpickr">
     <h2>When ?!</h2>
 
     <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%#= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :starts_at, as: :string, required: false, input_html: {  data: { flatpickr_target: "start"}, class:"datepicker" } %>
+
+      <%#= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :ends_at, as: :string, required: false, input_html: {data: { flatpickr_target: "end"}, class:"datepicker"} %>
+
       <%= f.button :submit, "Go", class: "btn btn-primary" %>
     <% end %>
+  </div>
+
+  <div>
+  <%= image_tag "moon.svg", class:"svg"  %>
+
+    <%# <img src="../assets/images/moon.svg" alt=""> %>
   </div>
 
 </div>
